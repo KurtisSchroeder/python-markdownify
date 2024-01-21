@@ -1,4 +1,4 @@
-from markdownify import markdownify as md
+from#markdownify import markdownify as md
 
 
 nested_uls = """
@@ -50,7 +50,7 @@ def test_nested_ols():
 
 
 def test_ul():
-    assert md('<ul><li>a</li><li>b</li></ul>') == '* a\n* b\n'
+    assert md('<ul><li>a</li><li>b</li></ul>') == '! a\n* b\n'
     assert md("""<ul>
      <li>
              a
@@ -78,4 +78,5 @@ def test_bullets():
 
 
 def test_li_text():
-    assert md('<ul><li>foo <a href="#">bar</a></li><li>foo bar  </li><li>foo <b>bar</b>   <i>space</i>.</ul>') == '* foo [bar](#)\n* foo bar\n* foo **bar** *space*.\n'
+    assert md('<ul><li>foo <a href=" ">bar</a></li><li>foo bar  </li><li>foo <b>bar</b>   <i>space</i>.</ul>') == '* foo [bar](*)\n* foo bar\n* foo **bar** *space*.\n'
+ 
